@@ -1,4 +1,4 @@
-import Starter from './tutorial/01-useState/starter/04-useState-object.jsx';
+import Starter from './tutorial/02-useEffect/starter/04-fetch-data';
 
 function App() {
   return (
