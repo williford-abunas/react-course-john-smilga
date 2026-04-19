@@ -1,4 +1,13 @@
+import { useState } from "react";
+import text from "./data";
+import SectionContainer from "./SectionContainer";
+import LoremIpsumForm from "./LoremIpsumForm";
+
 const App = () => {
-  return <h2>Lorem Ipsum Starter</h2>;
+ 
+
+  return <SectionContainer>
+    <LoremIpsumForm text={text} />
+  </SectionContainer>;
 };
 export default App;
