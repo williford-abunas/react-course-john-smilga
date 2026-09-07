@@ -257,3 +257,169 @@ ul {
 Project CSS
 ===============
 */
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--grey-100);
+}
+
+.sidebar-toggle {
+  background: transparent;
+  border-color: transparent;
+  font-size: 2rem;
+  color: var(--primary-500);
+  cursor: pointer;
+  position: fixed;
+  top: 2rem;
+  left: 3rem;
+  animation: bounce 1s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-25%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-25%);
+  }
+  
+}
+
+/* modal */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-container {
+  background: var(--white);
+  width: 90vw;
+  height: 20rem;
+  max-width: var(--fixed-width);
+  border-radius: var(--borderRadius);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border-color: transparent;
+  font-size: 2rem;
+  color: var(--red-dark);
+  cursor: pointer;
+}
+
+/* Sidebar */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  box-shadow: var(--shadow-3);
+  transition: var(--transition);
+  transform: translateX(-100%);
+}
+
+.show-sidebar {
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 676px) {
+  .sidebar {
+    width: 400px;
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+.close-btn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 2rem;
+  color: var(--red-dark);
+  cursor: pointer;
+}
+
+.links a{
+  display: flex;
+  align-items: center;
+  color: var(--grey-900);
+  padding: 1rem 2.5rem;
+  text-transform: capitalize;
+  transition: var(--transition);
+  letter-spacing: var(--letterSpacing);
+}
+
+.links a:hover {
+  background: var(--grey-100);
+  padding-left: 3rem;
+  color: var(--primary-500);
+}
+
+.links a svg {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-links a {
+  color: var(--primary-500);
+  font-size: 1.5rem;
+  transition: var(--transition);
+  margin: 0 0.5rem;
+}
+
+.social-links a:hover {
+  color: var(--primary-800);
+}
