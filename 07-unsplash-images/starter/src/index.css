@@ -54,18 +54,49 @@ html {
   --view-width: 90vw;
   /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   /* dark mode setup */
+  --dark-mode-bg-color: #333;
+  --dark-mode-text-color: #f0f0f0;
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-900);
+  --darkModeTransition:
+    color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --backgroundColor: var(--dark-mode-bg-color);
+    --textColor: var(--dark-mode-text-color);
+  }
+} */
+
+.dark-theme {
+  --backgroundColor: var(--dark-mode-bg-color);
+  --textColor: var(--dark-mode-text-color);
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--backgroundColor);
+  color: var(--textColor);
+  transition: var(--darkModeTransition);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   font-weight: 400;
   line-height: 1;
 }
@@ -283,14 +314,13 @@ PROJECT CSS
 Toggle Container
 ========
 */
-
 .toggle-container {
   width: var(--view-width);
   max-width: var(--max-width);
   padding: 1rem 0;
   margin: 0 auto;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .dark-toggle {
@@ -302,6 +332,7 @@ Toggle Container
   place-items: center;
   cursor: pointer;
 }
+
 .toggle-icon {
   font-size: 1.5rem;
   color: var(--textColor);
@@ -311,9 +342,11 @@ Toggle Container
 Search Form
 ========
 */
+
 .title {
   color: var(--primary-500);
 }
+
 .search-form {
   width: var(--view-width);
   max-width: var(--fixed-width);
@@ -328,18 +361,16 @@ Search Form
   transition: var(--darkModeTransition);
   color: var(--textColor);
   border-radius: 0;
-
-  /* border-right: none; */
 }
 
 .search-form .btn {
   border-radius: 0;
 }
+
 .search-form .btn:hover {
   background: var(--primary-300);
   color: var(--black);
 }
-
 /* 
 ========
 Gallery
@@ -363,6 +394,7 @@ Gallery
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media (min-width: 992px) {
   .image-container {
     grid-template-columns: 1fr 1fr 1fr;
